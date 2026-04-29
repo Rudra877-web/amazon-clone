@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Ember:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --amazon-orange: #FF9900;
+  --amazon-orange-dark: #e47911;
+  --amazon-blue: #131921;
+  --amazon-blue-light: #232F3E;
+  --amazon-teal: #37475A;
+  --amazon-yellow: #FEBD69;
+  --amazon-yellow-light: #F7CA00;
+  --amazon-green: #067D62;
+  --amazon-red: #CC0C39;
+  --amazon-gray: #f0f2f2;
+  --amazon-border: #D5D9D9;
+  --amazon-text: #0F1111;
+  --amazon-text-light: #565959;
+  --amazon-link: #007185;
+  --amazon-link-hover: #C7511F;
+  --white: #ffffff;
+  --shadow: 0 2px 5px rgba(15,17,17,.15);
+  --shadow-md: 0 4px 12px rgba(15,17,17,.2);
+  --radius: 8px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--amazon-gray);
+  color: var(--amazon-text);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+a { text-decoration: none; color: inherit; }
+
+button { cursor: pointer; border: none; outline: none; font-family: inherit; }
+
+input, select, textarea {
+  font-family: inherit;
+  outline: none;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: #f1f1f1; }
+::-webkit-scrollbar-thumb { background: #ccc; border-radius: 3px; }
+
+/* Utility */
+.container { max-width: 1500px; margin: 0 auto; padding: 0 16px; }
+.btn-primary {
+  background: linear-gradient(to bottom, #f7dfa5, #f0c14b);
+  border: 1px solid #a88734;
+  color: #111;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.btn-primary:hover { background: linear-gradient(to bottom, #f5d78e, #eeb933); }
+
+.btn-orange {
+  background: linear-gradient(to bottom, #f0a070, #e47911);
+  border: 1px solid #c45500;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.btn-add-cart {
+  background: linear-gradient(to bottom, #f7dfa5, #f0c14b);
+  border: 1px solid #a88734;
+  color: #111;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+  transition: all 0.15s;
+}
+.btn-add-cart:hover { background: linear-gradient(to bottom, #f5d78e, #eeb933); }
+
+.btn-buy {
+  background: linear-gradient(to bottom, #f0a070, #e47911);
+  border: 1px solid #c45500;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 8px;
+  transition: all 0.15s;
+}
+
+.price { color: var(--amazon-red); font-weight: 700; }
+.price-large { font-size: 28px; color: var(--amazon-red); font-weight: 700; }
+.original-price { text-decoration: line-through; color: var(--amazon-text-light); }
+.discount-badge {
+  background: var(--amazon-red);
+  color: white;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.star { color: var(--amazon-orange); }
+.stars-container { display: flex; align-items: center; gap: 4px; }
+
+.card {
+  background: white;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.loading-spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid var(--amazon-border);
+  border-top-color: var(--amazon-orange);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.badge {
+  background: var(--amazon-red);
+  color: white;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  font-size: 11px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: -6px;
+  right: -6px;
+}
+
+.page-wrapper {
+  min-height: calc(100vh - 120px);
+  padding: 20px 0 40px;
+}
+
+.alert {
+  padding: 12px 16px;
+  border-radius: 4px;
+  margin-bottom: 16px;
+  font-size: 14px;
+}
+.alert-error { background: #fff0f0; border: 1px solid #fac; color: #c00; }
+.alert-success { background: #f0fff4; border: 1px solid #9f9; color: #060; }
